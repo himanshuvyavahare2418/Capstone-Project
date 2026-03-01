@@ -1,0 +1,243 @@
+/* ========================================
+   Sidebar Styles - Baby Friendly Theme
+   ======================================== */
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(180deg, #E8F8F5 0%, #F0FFF0 50%, #FFF0F5 100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 20px rgba(137, 207, 240, 0.2);
+  z-index: 100;
+}
+
+/* Header */
+.sidebar-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(137, 207, 240, 0.2);
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.sidebar-logo .logo-icon {
+  font-size: 2rem;
+}
+
+.sidebar-logo .logo-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #2C5F2D;
+}
+
+.user-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #89CFF0 0%, #20B2AA 100%);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Navigation */
+.sidebar-nav {
+  flex: 1;
+  padding: 20px 12px;
+  overflow-y: auto;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  color: #4A4A4A;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, #89CFF0, #FFB6C1);
+  border-radius: 0 4px 4px 0;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-item:hover {
+  background: rgba(137, 207, 240, 0.15);
+  transform: translateX(4px);
+}
+
+.nav-item:hover::before {
+  transform: scaleY(1);
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, rgba(137, 207, 240, 0.3) 0%, rgba(255, 182, 193, 0.3) 100%);
+  color: #2C5F2D;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(137, 207, 240, 0.2);
+}
+
+.nav-item.active::before {
+  transform: scaleY(1);
+}
+
+.nav-item.active .nav-icon {
+  transform: scale(1.1);
+}
+
+.nav-icon {
+  font-size: 1.3rem;
+  width: 24px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-label {
+  flex: 1;
+}
+
+/* Footer */
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(137, 207, 240, 0.2);
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 100, 100, 0.1);
+  color: #e74c3c;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 100, 100, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 100, 100, 0.2);
+}
+
+/* ========================================
+   Responsive Styles
+   ======================================== */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 80px;
+  }
+
+  .sidebar-header {
+    padding: 16px 10px;
+  }
+
+  .sidebar-logo .logo-text,
+  .user-badge {
+    display: none;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 14px;
+  }
+
+  .logout-btn span:last-child {
+    display: none;
+  }
+
+  .logout-btn {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    flex-direction: row;
+    padding: 8px 16px;
+  }
+
+  .sidebar-header,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .sidebar-nav {
+    padding: 0;
+    overflow-x: auto;
+    flex: none;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 4px;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    gap: 4px;
+  }
+
+  .nav-label {
+    display: block;
+    font-size: 0.65rem;
+  }
+
+  .nav-icon {
+    font-size: 1.2rem;
+  }
+}

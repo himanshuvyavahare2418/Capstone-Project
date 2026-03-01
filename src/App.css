@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+/* Main Content Styles */
+.main-content {
+  min-height: calc(100vh - 72px);
+  padding-top: 72px;
+}
+
+.main-content.no-navbar {
+  padding-top: 0;
+}

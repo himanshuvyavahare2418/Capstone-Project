@@ -1,0 +1,172 @@
+/* Vaccinations Page Styles */
+.vaccinations {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.vaccinations-header {
+  margin-bottom: 30px;
+}
+
+.vaccinations-header h1 {
+  font-size: 2rem;
+  color: #2d3748;
+  margin: 0 0 10px 0;
+}
+
+.vaccinations-header p {
+  font-size: 1.1rem;
+  color: #718096;
+  margin: 0;
+}
+
+/* Filters */
+.vaccinations-filters {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-group label {
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.filter-select {
+  padding: 10px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #2d3748;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.filter-select:hover {
+  border-color: #667eea;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Table */
+.vaccinations-table {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.vaccinations-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vaccinations-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.vaccinations-table th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vaccinations-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #2d3748;
+}
+
+.vaccinations-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.vaccinations-table tbody tr:hover {
+  background-color: #f7fafc;
+}
+
+.vaccinations-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-completed {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.status-upcoming {
+  background-color: #bee3f8;
+  color: #2a4365;
+}
+
+.status-overdue {
+  background-color: #fed7d7;
+  color: #742a2a;
+}
+
+/* Action Button */
+.btn-action {
+  padding: 8px 16px;
+  background-color: #667eea;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-action:hover {
+  background-color: #5a67d8;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vaccinations-filters {
+    flex-direction: column;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .filter-select {
+    flex: 1;
+  }
+
+  .vaccinations-table {
+    overflow-x: auto;
+  }
+
+  .vaccinations-table table {
+    min-width: 600px;
+  }
+}

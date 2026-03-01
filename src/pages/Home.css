@@ -1,0 +1,644 @@
+/* ========================================
+   Home Page Styles - Baby Friendly Theme
+   ======================================== */
+
+/* CSS Variables */
+:root {
+  --primary-gradient: linear-gradient(135deg, #89CFF0 0%, #FFB6C1 100%);
+  --secondary-gradient: linear-gradient(135deg, #98FB98 0%, #20B2AA 100%);
+  --accent-blue: #89CFF0;
+  --accent-pink: #FFB6C1;
+  --accent-green: #98FB98;
+  --accent-peach: #FFB347;
+  --accent-teal: #20B2AA;
+  --accent-mint: #7FDBCA;
+  --text-dark: #4A4A4A;
+  --text-muted: #666666;
+  --bg-light: #E8F8F5;
+  --bg-white: #FFFFFF;
+  --shadow-soft: 0 4px 15px rgba(137, 207, 240, 0.2);
+  --shadow-medium: 0 8px 30px rgba(137 240, 0.3);
+  --transition-smooth: all , 207,0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Main Home Container */
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #E8F8F5 0%, #F0FFF0 50%, #FFF0F5 100%);
+}
+
+/* ========================================
+   Hero Banner Styles - Image Focused
+   ======================================== */
+.hero-banner {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.banner-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.banner-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s ease-in-out;
+}
+
+.banner-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.banner-image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+}
+
+.banner-text {
+  max-width: 500px;
+  color: #fff;
+  animation: slideInLeft 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.banner-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.banner-subtitle {
+  font-size: 1.3rem;
+  margin: 0 0 25px 0;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+.banner-cta {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #FFB6C1 0%, #FFA07A 100%);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.5);
+  transition: var(--transition-smooth);
+}
+
+.banner-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(255, 182, 193, 0.6);
+}
+
+/* Banner Navigation */
+.banner-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 20;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-nav:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.banner-nav.prev {
+  left: 20px;
+}
+
+.banner-nav.next {
+  right: 20px;
+}
+
+/* Banner Indicators */
+.banner-indicators {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 20;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.indicator.active {
+  background: #FFB6C1;
+  transform: scale(1.3);
+}
+
+/* ========================================
+   Vaccination Info Cards
+   ======================================== */
+.home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  flex: 1;
+}
+
+.vaccination-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.vaccination-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 10px 40px rgba(137, 207, 240, 0.25);
+  border-top: 5px solid;
+  transition: var(--transition-smooth);
+}
+
+.vaccination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 50px rgba(137, 207, 240, 0.35);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  display: block;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin: 0;
+  font-weight: 700;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0 0 25px 0;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+
+.card-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.card-features li:last-child {
+  border-bottom: none;
+}
+
+.feature-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #98FB98, #7FDBCA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #22543d;
+  font-weight: bold;
+}
+
+.card-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 50px;
+  transition: var(--transition-smooth);
+}
+
+.card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   Auth CTA Section
+   ======================================== */
+.auth-cta-section {
+  background: linear-gradient(180deg, #E8F8F5 0%, #F0FFF0 50%, #FFF0F5 100%);
+  padding: 60px 20px;
+}
+
+.auth-cta-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.auth-cta-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(137, 207, 240, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.auth-cta-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 50px rgba(137, 207, 240, 0.35);
+}
+
+.login-card {
+  border-bottom: 4px solid #89CFF0;
+}
+
+.register-card {
+  border-bottom: 4px solid #FFB6C1;
+}
+
+.auth-cta-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.auth-cta-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.auth-cta-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0 0 25px 0;
+  line-height: 1.6;
+}
+
+.auth-cta-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 50px;
+  transition: var(--transition-smooth);
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #89CFF0 0%, #20B2AA 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(137, 207, 240, 0.4);
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(137, 207, 240, 0.5);
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #FFB6C1 0%, #FFA07A 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+}
+
+.register-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(255, 182, 193, 0.5);
+}
+
+/* ========================================
+   Footer Styles
+   ======================================== */
+.footer {
+  background: linear-gradient(135deg, #2C5F2D 0%, #3D7A3D 100%);
+  color: #fff;
+  padding: 60px 0 0 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-section {
+  padding: 20px 0;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-logo-icon {
+  font-size: 2rem;
+}
+
+.footer-logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: var(--transition-smooth);
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  color: #FFB6C1;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* ========================================
+   Responsive Styles
+   ======================================== */
+@media (max-width: 992px) {
+  .hero-banner {
+    height: 380px;
+  }
+
+  .banner-content {
+    padding: 0 60px;
+  }
+
+  .banner-title {
+    font-size: 2.4rem;
+  }
+
+  .vaccination-cards {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 320px;
+  }
+
+  .banner-content {
+    padding: 0 40px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+  }
+
+  .banner-title {
+    font-size: 1.8rem;
+  }
+
+  .banner-subtitle {
+    font-size: 1rem;
+  }
+
+  .banner-cta {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .banner-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .banner-nav.prev {
+    left: 10px;
+  }
+
+  .banner-nav.next {
+    right: 10px;
+  }
+
+  .vaccination-cards {
+    gap: 20px;
+  }
+
+  .vaccination-card {
+    padding: 25px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-contact li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner {
+    height: 280px;
+  }
+
+  .banner-content {
+    padding: 0 20px;
+    align-items: flex-end;
+    padding-bottom: 50px;
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+  }
+
+  .banner-subtitle {
+    font-size: 0.9rem;
+    display: none;
+  }
+
+  .banner-cta {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .vaccination-card {
+    padding: 20px;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+}

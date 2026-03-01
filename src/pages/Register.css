@@ -1,0 +1,212 @@
+/* ========================================
+   Register Page Styles - Baby Friendly Theme
+   ======================================== */
+
+.register-page {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #E8F8F5 0%, #F0FFF0 50%, #FFF0F5 100%);
+  padding: 20px;
+}
+
+.register-container {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 10px 40px rgba(137, 207, 240, 0.25);
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.register-icon {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.register-header h1 {
+  font-size: 1.7rem;
+  color: #4A4A4A;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.register-header p {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.error-message {
+  background: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* User Type Selector */
+.user-type-selector {
+  margin-bottom: 5px;
+}
+
+.user-type-selector label {
+  display: block;
+  font-size: 0.95rem;
+  color: #4A4A4A;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.user-type-options {
+  display: flex;
+  gap: 15px;
+}
+
+.type-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.type-option input {
+  display: none;
+}
+
+.type-option.selected {
+  border-color: #89CFF0;
+  background: #f0f8ff;
+}
+
+.type-icon {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.type-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4A4A4A;
+}
+
+.type-option.selected .type-label {
+  color: #20B2AA;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: #4A4A4A;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 12px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #89CFF0;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(137, 207, 240, 0.2);
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+.register-btn {
+  padding: 14px;
+  background: linear-gradient(135deg, #89CFF0 0%, #FFB6C1 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.register-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(137, 207, 240, 0.4);
+}
+
+.register-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.register-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #eee;
+}
+
+.register-footer p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.register-footer a {
+  color: #20B2AA;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .register-container {
+    padding: 25px 18px;
+  }
+
+  .register-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .register-icon {
+    font-size: 2.5rem;
+  }
+
+  .user-type-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
