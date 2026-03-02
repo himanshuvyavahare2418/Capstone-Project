@@ -10,17 +10,15 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect("mongodb://localhost:27017/Block-Chain")
+  .connect("mongodb://localhost:27017/Baby-Vaccinee")
   .then(() => console.log("✅ MongoDB Connected"))
   .catch(err => console.log(err));
 
-app.use("/student", require("./routes/StudentLoginRoute"));
-app.use("/teacher", require("./routes/TeacherLoginRoute"));
-app.use("/student", require("./routes/studentProfileRoutes"));
-// student requests for record changes
-app.use("/student/request", require("./routes/requestRoutes"));
-app.use("/student/form", require("./routes/formRoutes"));
+app.use("/user", require("./routes/UserLoginRoute"));
 app.use("/contact", require("./routes/contactRoutes"));
+app.use("/child", require("./routes/childRoutes"));
+app.use("/appointment", require("./routes/appointmentRoutes"));
+app.use("/note", require("./routes/noteRoutes"));
 app.use("/uploads", express.static("uploads"));
 
 app.get("/", (req, res) => {
